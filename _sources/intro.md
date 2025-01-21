@@ -13,12 +13,12 @@ resources, and streamline workflows.
 
 ## Materials
 
-- [ODSRCI Workshop: Distributed Python](https://southernmethodistuniversity.github.io/parallel_python/)
-- [ODSRCI Workshop: Distributed Python Repo](https://github.com/SouthernMethodistUniversity/parallel_python)
+- [ODSRCI Workshop: Distributed Python](https://southernmethodistuniversity.github.io/distributed_python/)
+- [ODSRCI Workshop: Distributed Python Repo](https://github.com/SouthernMethodistUniversity/distributed_python)
 - [Dask](https://docs.dask.org/en/stable/)
 - [Ray](https://docs.ray.io/en/latest/)
 
-```{figure} parallel_cpp_qr.png
+```{figure} distributed_python_qr.png
 :scale: 50 %
 :alt: QR code for Distributed Python workshop website.
 
