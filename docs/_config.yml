@@ -1,0 +1,17 @@
+title: "Scaling Python with Dask and Ray: A Hands-On Approach to Distributed Computing"
+author: SMU O'Donnell Data Science and Research Computing Institute
+logo: logo.webp
+copyright: "2025"
+
+execute:
+  execute_notebooks: force
+
+repository:
+  url: "https://github.com/SouthernMethodistUniversity/parallel_python"
+  path_to_book: docs
+  branch: main
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+
