@@ -1,6 +1,6 @@
-dask[complete]
+ray[all]>=2.34.0
+dask[complete]==2024.6.0
 dask_mpi
 dask-jobqueue
-ray[all]
 jupyterlab
 modin[all]
