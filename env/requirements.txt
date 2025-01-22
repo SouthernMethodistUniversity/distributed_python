@@ -2,3 +2,5 @@ dask[complete]
 dask_mpi
 dask-jobqueue
 ray[all]
+jupyterlab
+modin[all]
