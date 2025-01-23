@@ -1,0 +1,3 @@
+[submodule "src/ray"]
+	path = src/ray
+	url = https://github.com/SouthernMethodistUniversity/ray-core-tutorial.git
