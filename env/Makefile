@@ -16,7 +16,6 @@ install: load-modules $(VENV_DIR) $(REQ_FILE)
 	@echo "Activating virtual environment and installing dependencies..."
 	source $(VENV_DIR)/bin/activate && \
 	pip install -U pip wheel setuptools && \
-	pip install --no-binary :all: --compile mpi4py && \
 	pip install -r $(REQ_FILE) && \
 	pip install torch torchvision torchaudio \
 	--index-url https://download.pytorch.org/whl/cpu
