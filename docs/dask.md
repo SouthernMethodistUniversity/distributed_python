@@ -2,8 +2,32 @@
 
 ## Overview
 
-## Installation
+Dask is an open-source Python library designed for parallel computing, enabling
+efficient scaling of data analysis workflows from single machines to large
+distributed clusters. It extends familiar interfaces like NumPy, Pandas, and
+scikit-learn, allowing users to handle larger-than-memory datasets and perform
+complex computations with minimal code changes. Dask’s high-level
+collections—such as DataFrames, Arrays, and Bags—facilitate parallel operations
+on structured and unstructured data, while its dynamic task scheduler optimizes
+execution across multiple cores or nodes. This versatility makes Dask suitable
+for a wide range of applications, including retail demand forecasting,
+large-scale image processing in life sciences, financial system modeling, and
+geophysical data analysis.  ￼
 
-## Running Jobs
+## Tutorial
 
+1. Launch JupyterLab session with the following configuration:
+    - **Slurm Account**: `rkalescky_dask_ray_0001`
+    - **Partition**: `standard-s`
+    - **Select Python Environment**: `Custom Environment - only use what is specified below`
+    - **Custom Environment Settings**:
+        ```sh
+        module purge
+        module use ${HOME}/distributed_python/env
+        module load distributed_python
+        ```
+    - **Time (Hours)**: 2
+    - **Cores per node**: 8
+    - **Memory**: 32
+2. Work through `./src/dask/intro.ipynb`
 
