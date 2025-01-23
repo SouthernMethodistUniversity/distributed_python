@@ -31,10 +31,12 @@ parallelism or high communication efficiency.
 `````{tab-set}
 ````{tab-item} Personal Environment
 Use the following commands if you would like to setup your own environment. The
-principle advantage is that the environment can be subsequently customized.
+principle advantage is that the environment can be subsequently customized. Run
+the following commands from a M3 terminal session, e.g. SSH or the SMU HPC
+Portal M3 Shell Access.
 ```{code-block} sh
 cd $HOME
-git clone https://github.com/SouthernMethodistUniversity/distributed_python.git
+git clone --recurse-submodules https://github.com/SouthernMethodistUniversity/distributed_python.git
 cd distributed_python/env
 make install
 ```
@@ -47,11 +49,4 @@ rsync -a --exclude 'dask_ray_workshop' /projects/rkalescky/dask_ray/shared_data/
 ```
 ````
 `````
-
-## Using the Environment
-
-### Submitting Batch Jobs
-
-### JupyterLab
-
 
