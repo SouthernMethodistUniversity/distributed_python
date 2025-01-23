@@ -169,6 +169,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="parallel_programming.html">Parallel Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Environment Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dask.html">Dask</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Ray</a></li>
 </ul>
@@ -364,8 +365,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jobs">Running Jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">Tutorial</a></li>
 </ul>
             </nav>
         </div>
@@ -381,12 +381,41 @@
 <h1>Ray<a class="headerlink" href="#ray" title="Link to this heading">#</a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>Ray is a powerful distributed computing framework designed to simplify the
+development of scalable and high-performance applications by abstracting the
+complexities of parallelism and distributed execution. It enables users to
+effortlessly parallelize and scale Python code across multiple CPUs or GPUs,
+making it ideal for building machine learning models, data processing pipelines,
+reinforcement learning algorithms, and real-time decision-making systems. One
+notable feature of Ray is its versatility, supporting libraries like Dask to run
+on top of it, thus enabling users to leverage Dask’s familiar API for advanced
+task scheduling and parallel computing while benefiting from Ray’s robust
+resource management. This combination makes Ray a valuable tool for tackling
+complex computational workloads in areas such as deep learning, data analytics,
+simulation, and model serving.</p>
 </section>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-</section>
-<section id="running-jobs">
-<h2>Running Jobs<a class="headerlink" href="#running-jobs" title="Link to this heading">#</a></h2>
+<section id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Launch JupyterLab session with the following configuration:</p>
+<ul>
+<li><p><strong>Slurm Account</strong>: <code class="docutils literal notranslate"><span class="pre">rkalescky_dask_ray_0001</span></code></p></li>
+<li><p><strong>Partition</strong>: <code class="docutils literal notranslate"><span class="pre">standard-s</span></code></p></li>
+<li><p><strong>Select Python Environment</strong>: <code class="docutils literal notranslate"><span class="pre">Custom</span> <span class="pre">Environment</span> <span class="pre">-</span> <span class="pre">only</span> <span class="pre">use</span> <span class="pre">what</span> <span class="pre">is</span> <span class="pre">specified</span> <span class="pre">below</span></code></p></li>
+<li><p><strong>Custom Environment Settings</strong>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>purge
+module<span class="w"> </span>use<span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/distributed_python/env
+module<span class="w"> </span>load<span class="w"> </span>distributed_python
+</pre></div>
+</div>
+</li>
+<li><p><strong>Time (Hours)</strong>: 2</p></li>
+<li><p><strong>Cores per node</strong>: 8</p></li>
+<li><p><strong>Memory</strong>: 32</p></li>
+</ul>
+</li>
+<li><p>Work through <code class="docutils literal notranslate"><span class="pre">./src/ray/ex_01_remote_funcs.ipynb</span></code></p></li>
+</ol>
 </section>
 </section>
 
@@ -447,8 +476,7 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jobs">Running Jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">Tutorial</a></li>
 </ul>
   </nav></div>
 

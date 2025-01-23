@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Ray" href="ray.html" />
-    <link rel="prev" title="Parallel Programming" href="parallel_programming.html" />
+    <link rel="prev" title="Environment Setup" href="setup.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -170,6 +170,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="parallel_programming.html">Parallel Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Environment Setup</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Dask</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ray.html">Ray</a></li>
 </ul>
@@ -365,8 +366,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jobs">Running Jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">Tutorial</a></li>
 </ul>
             </nav>
         </div>
@@ -382,12 +382,40 @@
 <h1>Dask<a class="headerlink" href="#dask" title="Link to this heading">#</a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>Dask is an open-source Python library designed for parallel computing, enabling
+efficient scaling of data analysis workflows from single machines to large
+distributed clusters. It extends familiar interfaces like NumPy, Pandas, and
+scikit-learn, allowing users to handle larger-than-memory datasets and perform
+complex computations with minimal code changes. Dask’s high-level
+collections—such as DataFrames, Arrays, and Bags—facilitate parallel operations
+on structured and unstructured data, while its dynamic task scheduler optimizes
+execution across multiple cores or nodes. This versatility makes Dask suitable
+for a wide range of applications, including retail demand forecasting,
+large-scale image processing in life sciences, financial system modeling, and
+geophysical data analysis.  ￼</p>
 </section>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-</section>
-<section id="running-jobs">
-<h2>Running Jobs<a class="headerlink" href="#running-jobs" title="Link to this heading">#</a></h2>
+<section id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Launch JupyterLab session with the following configuration:</p>
+<ul>
+<li><p><strong>Slurm Account</strong>: <code class="docutils literal notranslate"><span class="pre">rkalescky_dask_ray_0001</span></code></p></li>
+<li><p><strong>Partition</strong>: <code class="docutils literal notranslate"><span class="pre">standard-s</span></code></p></li>
+<li><p><strong>Select Python Environment</strong>: <code class="docutils literal notranslate"><span class="pre">Custom</span> <span class="pre">Environment</span> <span class="pre">-</span> <span class="pre">only</span> <span class="pre">use</span> <span class="pre">what</span> <span class="pre">is</span> <span class="pre">specified</span> <span class="pre">below</span></code></p></li>
+<li><p><strong>Custom Environment Settings</strong>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>purge
+module<span class="w"> </span>use<span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/distributed_python/env
+module<span class="w"> </span>load<span class="w"> </span>distributed_python
+</pre></div>
+</div>
+</li>
+<li><p><strong>Time (Hours)</strong>: 2</p></li>
+<li><p><strong>Cores per node</strong>: 8</p></li>
+<li><p><strong>Memory</strong>: 32</p></li>
+</ul>
+</li>
+<li><p>Work through <code class="docutils literal notranslate"><span class="pre">./src/dask/intro.ipynb</span></code></p></li>
+</ol>
 </section>
 </section>
 
@@ -422,12 +450,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="parallel_programming.html"
+       href="setup.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Parallel Programming</p>
+        <p class="prev-next-title">Environment Setup</p>
       </div>
     </a>
     <a class="right-next"
@@ -457,8 +485,7 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jobs">Running Jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">Tutorial</a></li>
 </ul>
   </nav></div>
 
