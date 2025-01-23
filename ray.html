@@ -366,6 +366,7 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">Tutorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-out">Scaling Out</a></li>
 </ul>
             </nav>
         </div>
@@ -434,6 +435,23 @@ module<span class="w"> </span>load<span class="w"> </span>distributed_python
 <li><p>Work through <code class="docutils literal notranslate"><span class="pre">./src/ray/ex_01_remote_funcs.ipynb</span></code></p></li>
 </ol>
 </section>
+<section id="scaling-out">
+<h2>Scaling Out<a class="headerlink" href="#scaling-out" title="Link to this heading">#</a></h2>
+<p>Setting up multi-node Ray involves configuring a Ray cluster where one node acts
+as the head node, and others join as worker nodes. The process typically starts
+by initializing the head node with <code class="docutils literal notranslate"><span class="pre">ray</span> <span class="pre">start</span> <span class="pre">--head</span></code> and specifying cluster
+options such as the port. Worker nodes are then started using <code class="docutils literal notranslate"><span class="pre">ray</span> <span class="pre">start</span> <span class="pre">--address='head-node-address:port'</span></code>. When using SLURM for job scheduling, the
+setup can vary depending on the specific Ray functionality required by the
+application. For example, applications that rely on Ray’s distributed data
+processing features, like Ray Datasets or libraries like Dask-on-Ray, may
+require careful resource allocation to ensure sufficient memory and compute
+resources are available on each node. In contrast, reinforcement learning
+workloads using Ray’s RLlib library might prioritize GPU resources and
+inter-node communication bandwidth. Tailoring the SLURM job scripts with
+specific options, e.g. <code class="docutils literal notranslate"><span class="pre">srun</span></code> and <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>, and resource flags ensures that Ray’s
+functionality aligns with the application’s needs, providing both flexibility
+and scalability.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -494,6 +512,7 @@ module<span class="w"> </span>load<span class="w"> </span>distributed_python
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">Tutorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-out">Scaling Out</a></li>
 </ul>
   </nav></div>
 

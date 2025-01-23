@@ -367,6 +367,7 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">Tutorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-out">Scaling Out</a></li>
 </ul>
             </nav>
         </div>
@@ -387,12 +388,12 @@ efficient scaling of data analysis workflows from single machines to large
 distributed clusters. It extends familiar interfaces like NumPy, Pandas, and
 scikit-learn, allowing users to handle larger-than-memory datasets and perform
 complex computations with minimal code changes. Dask’s high-level
-collections—such as DataFrames, Arrays, and Bags—facilitate parallel operations
+collections, such as DataFrames, Arrays, and Bags, facilitate parallel operations
 on structured and unstructured data, while its dynamic task scheduler optimizes
 execution across multiple cores or nodes. This versatility makes Dask suitable
 for a wide range of applications, including retail demand forecasting,
 large-scale image processing in life sciences, financial system modeling, and
-geophysical data analysis.  ￼</p>
+geophysical data analysis.</p>
 </section>
 <section id="tutorial">
 <h2>Tutorial<a class="headerlink" href="#tutorial" title="Link to this heading">#</a></h2>
@@ -433,6 +434,23 @@ module<span class="w"> </span>load<span class="w"> </span>distributed_python
 <ol class="arabic simple" start="2">
 <li><p>Work through <code class="docutils literal notranslate"><span class="pre">./src/dask/intro.ipynb</span></code></p></li>
 </ol>
+</section>
+<section id="scaling-out">
+<h2>Scaling Out<a class="headerlink" href="#scaling-out" title="Link to this heading">#</a></h2>
+<p>Setting up a multi-node Dask cluster using MPI and TCP involves configuring Dask
+to operate across multiple nodes, leveraging MPI for process management and TCP
+for inter-process communication. The <code class="docutils literal notranslate"><span class="pre">dask-mpi</span></code> package facilitates this by
+enabling the deployment of Dask components within an existing MPI environment.
+When integrating with SLURM, the approach varies depending on the specific Dask
+functionality required. For instance, using <code class="docutils literal notranslate"><span class="pre">dask-mpi</span></code>, you can initialize the
+Dask scheduler and workers by executing a Python script with <code class="docutils literal notranslate"><span class="pre">mpirun</span></code> or
+<code class="docutils literal notranslate"><span class="pre">mpiexec</span></code>, which launches the scheduler on MPI rank 0 and workers on subsequent
+ranks. Alternatively, the <code class="docutils literal notranslate"><span class="pre">dask-jobqueue</span></code> library provides the <code class="docutils literal notranslate"><span class="pre">SLURMCluster</span></code>
+class, allowing for dynamic allocation of Dask workers as separate SLURM jobs,
+which is particularly useful for interactive workloads. The choice between these
+methods depends on the application’s nature and the desired level of control
+over the cluster’s resources. Template scripts for launching Dask via MPI are
+available in the <code class="docutils literal notranslate"><span class="pre">./scripts</span></code> directory.</p>
 </section>
 </section>
 
@@ -503,6 +521,7 @@ module<span class="w"> </span>load<span class="w"> </span>distributed_python
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">Tutorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-out">Scaling Out</a></li>
 </ul>
   </nav></div>
 
