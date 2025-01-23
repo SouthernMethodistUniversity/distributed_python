@@ -4,3 +4,7 @@ dask_mpi
 dask-jobqueue
 jupyterlab
 modin[all]
+h5py
+matplotlib
+zarr
+tqdm

@@ -1,4 +1,4 @@
-MODULES = gcc/11.2.0 openmpi/4.1.6-vfi4iwj python/3.11.7-qxgm323
+MODULES = gcc/11.2.0 openmpi/4.1.6-vfi4iwj python/3.12.5-b22gg7o
 VENV_DIR = ./dask_ray_workshop
 REQ_FILE = requirements.txt
 
@@ -17,7 +17,9 @@ install: load-modules $(VENV_DIR) $(REQ_FILE)
 	source $(VENV_DIR)/bin/activate && \
 	pip install -U pip wheel setuptools && \
 	pip install --no-binary :all: --compile mpi4py && \
-	pip install -r $(REQ_FILE)
+	pip install -r $(REQ_FILE) && \
+	pip install torch torchvision torchaudio \
+	--index-url https://download.pytorch.org/whl/cpu
 
 .PHONY: load-modules
 load-modules:

@@ -1,6 +1,6 @@
 whatis("ODSRCI Workshop: Distributed Python Using Dask and Ray")
 
-load("gcc/11.2.0", "openmpi/4.1.6-vfi4iwj", "python/3.11.7-qxgm323")
+load("gcc/11.2.0", "openmpi/4.1.6-vfi4iwj", "python/3.12.5-b22gg7o")
 
 local script_path = myFileName()
 local script_dir = dirname(script_path)
